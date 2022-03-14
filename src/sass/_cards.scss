@@ -1,0 +1,31 @@
+/* CARDS */
+.card {
+    padding: 1.5rem;
+}
+
+.card-figure,
+.card-title,
+.card-subtitle,
+.card-paragraph,
+.card-icons {
+    margin: 0 0 1rem 0;
+}
+
+.card-title {
+    font-size: 1rem;
+    color: #1b1b1b;
+    font-weight: 600;
+}
+
+.card-subtitle,
+.card-paragraph {
+    font-size: 0.875rem;
+    color: #aaaaaa;
+    font-weight: none;
+    line-height: 1.5rem;
+}
+
+.card-paragraph {
+    margin: 0.5rem 0 1rem 0;
+    line-height: none;
+}

@@ -1,0 +1,96 @@
+// * CONFIGURATION
+$bg-navbar : #fafafa;
+$nav-link : (
+  "size" : 0.75rem,
+  "weight" : none,
+  "color" : #1b1b1b,
+  "color-hover" : #1b1b1b99,
+);
+
+header {
+  .containerMax {
+    background-color: $bg-navbar;
+  }
+}
+
+nav {
+  .containerMin {
+    padding: 1rem 0;
+  }
+  .nav-desktop {
+    padding: 0;
+  }
+}
+
+.nav-brand,
+.nav-menu {
+  cursor: pointer;
+}
+
+.xs-d-none {
+  display: none;
+}
+.xs-d-block {
+  display: block;
+}
+
+.nav {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-ul {
+  display: none;
+}
+
+.nav-link {
+  padding: 1rem 0;
+  font-size: map-get($map: $nav-link, $key: size);
+  font-weight: map-get($map: $nav-link, $key: weight);
+  color: map-get($map: $nav-link, $key: color);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  cursor: pointer;
+}
+
+.nav-ul--visible {
+  display: block;
+}
+
+@media screen and (min-width: 62rem) {
+  nav {
+    .nav-desktop {
+      padding: 1rem 0;
+    }
+  }
+
+  .lg-d-none {
+    display: none;
+  }
+  .lg-d-block {
+    display: block;
+  }
+
+  .nav-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-ul {
+    display: flex;
+  }
+
+  .nav-link {
+    margin: 0 1.5rem 0 0;
+  }
+
+  .nav-link--margin {
+    margin: 0;
+  }
+}

@@ -1,0 +1,18 @@
+
+
+/* ACTIVE AND HOVER */
+.nav-link:active {
+    color: map-get($map: $nav-link, $key: color-hover);
+}
+@include isBtnActive();
+@include isInputsActive();
+@include isIconsActive();
+
+@media (hover : hover) {
+    .nav-link:hover {
+        color: map-get($map: $nav-link, $key: color-hover);
+    }
+    @include isBtnHover();
+    @include isInputsHover();
+    @include isIconsHover();
+}

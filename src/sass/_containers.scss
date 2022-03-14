@@ -1,0 +1,35 @@
+// * CONFIGURATION
+// Width of ContainerMin
+$width-containerMin: (
+  "sm": 34rem,
+  "md": 40.25rem,
+  "lg": 46.5rem,
+  "xl": 52.75rem,
+  "xxl": 59rem,
+);
+
+/* CONTAINERS */
+
+.containerMax,
+.containerMin {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 0.75rem;
+  margin: 0 auto;
+  z-index: 500;
+}
+
+.containerMin {
+  padding: 4rem 0;
+}
+
+footer {
+  .containerMin {
+    padding: 1rem 0;
+  }
+
+  .card-paragraph {
+    margin: 0 0 0.5rem 0;
+  }
+}

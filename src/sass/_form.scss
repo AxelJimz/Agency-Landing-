@@ -1,0 +1,144 @@
+// * CONFIGURATION
+// Props of Form
+$input-1: (
+  "used": true,
+  "width": 100px,
+  "padding": 0.5rem 1rem,
+  "size": 16px,
+  "color": none,
+  "bg": none,
+  "border-hover": none,
+);
+$input-2: (
+  "used": true,
+  "width": 200px,
+  "padding": 0.813rem 1.25rem,
+  "size": 14px,
+  "color": none,
+  "bg": none,
+  "border-hover": none,
+);
+$input-3: (
+  "used": true,
+  "width": 300px,
+  "padding": 1.156rem 1.5rem,
+  "size": 12px,
+  "color": none,
+  "bg": none,
+  "border-hover": none,
+);
+
+// MIXINS
+
+@mixin isInput-1($used: map-get($map: $input-1, $key: used)) {
+  @if ($used == true) {
+    .input-1 {
+      width: map-get($map: $input-1, $key: width);
+      padding: map-get($map: $input-1, $key: padding);
+      color: map-get($map: $input-1, $key: color);
+      font-size: map-get($map: $input-1, $key: size);
+      background-color: map-get($map: $input-1, $key: bg);
+      border: 1px solid map-get($map: $input-1, $key: bg);
+      outline: none;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin isInput-2($used: map-get($map: $input-2, $key: used)) {
+  @if ($used == true) {
+    .input-2 {
+      width: map-get($map: $input-2, $key: width);
+      padding: map-get($map: $input-2, $key: padding);
+      color: map-get($map: $input-2, $key: color);
+      font-size: map-get($map: $input-2, $key: size);
+      background-color: map-get($map: $input-2, $key: bg);
+      border: 1px solid map-get($map: $input-2, $key: bg);
+      outline: none;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin isInput-3($used: map-get($map: $input-3, $key: used)) {
+  @if ($used == true) {
+    .input-3 {
+      width: map-get($map: $input-3, $key: width);
+      padding: map-get($map: $input-3, $key: padding);
+      color: map-get($map: $input-3, $key: color);
+      font-size: map-get($map: $input-3, $key: size);
+      background-color: map-get($map: $input-3, $key: bg);
+      border: 1px solid map-get($map: $input-3, $key: bg);
+      outline: none;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+
+// MIXINS ACTIVE AND HOVER
+
+@mixin isInputsActive {
+  @if (map-get($map: $input-1, $key: border-hover) != none) {
+    .input-1:active {
+      border: 1px solid map-get($map: $input-1, $key: border-hover);
+    }
+  }
+
+  @if (map-get($map: $input-2, $key: border-hover) != none) {
+    .input-2:active {
+      border: 1px solid map-get($map: $input-2, $key: border-hover);
+    }
+  }
+
+  @if (map-get($map: $input-3, $key: border-hover) != none) {
+    .input-3:active {
+      border: 1px solid map-get($map: $input-3, $key: border-hover);
+    }
+  }
+}
+
+@mixin isInputsHover {
+  @if (map-get($map: $input-1, $key: border-hover) != none) {
+    .input-1:hover {
+      border: 1px solid map-get($map: $input-1, $key: border-hover);
+    }
+  }
+
+  @if (map-get($map: $input-2, $key: border-hover) != none) {
+    .input-2:hover {
+      border: 1px solid map-get($map: $input-2, $key: border-hover);
+    }
+  }
+
+  @if (map-get($map: $input-3, $key: border-hover) != none) {
+    .input-3:hover {
+      border: 1px solid map-get($map: $input-3, $key: border-hover);
+    }
+  }
+}
+
+// VERIFY AND INCLUDE CLASS
+
+.form {
+  width: 100%;
+  height: 100%;
+}
+
+@include isInput-1();
+@include isInput-2();
+@include isInput-3();

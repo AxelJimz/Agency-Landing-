@@ -1,0 +1,24 @@
+/* GRID */
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.columns-2,
+.columns-3,
+.columns-4,
+.columns-5,
+.columns-6 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.gap-16 {
+    grid-gap: 1rem;
+}
+.gap-20 {
+    grid-gap: 1.25rem;
+}
+.gap-24 {
+    grid-gap: 1.5rem;
+}

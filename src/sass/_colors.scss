@@ -1,0 +1,29 @@
+/* BACKGROUNDS */
+.bg-banner {
+    height: calc(100vh - 4.813rem);
+    background-image: url(../../src/images/backgrounds/banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-light {
+    background-color: #fafafa;
+}
+
+.bg-violet {
+    background-color: #485CC7;
+}
+
+.bg-black {
+    background-color: #1b1b1b;
+}
+
+/* COLOR */
+.text-white {
+    color: #fafafa;
+}
+
+.border-bottom {
+    border-bottom: 0.063rem solid #aaaaaa;
+}

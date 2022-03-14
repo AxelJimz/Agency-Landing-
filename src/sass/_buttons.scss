@@ -1,0 +1,170 @@
+// * CONFIGURATION
+// State of Buttons
+$btn: (
+  "used": true,
+  "size": 14px,
+  "weight": 500,
+  "color": black,
+  "color-hover": none,
+);
+$btn-small: (
+  "used" : false,
+  "padding" : 0.5rem 1rem,
+  "margin" : none,
+  "color" : #1b1b1b,
+  "bg" : #a3a3a3,
+  "color-hover": #1b1b1b,
+  "bg-hover": #a3a3a380,
+);
+$btn-medium: (
+  "used" : false,
+  "padding" : 0.75rem 1.25rem,
+  "margin" : none,
+  "color" : #1b1b1b,
+  "bg" : transparent,
+  "color-hover": #1b1b1b,
+  "bg-hover": #485CC7,
+);
+$btn-big: (
+  "used" : true,
+  "padding" : 1rem 1.5rem,
+  "margin" : none,
+  "color" : #fff,
+  "bg" : #485CC7,
+  "color-hover": #fff,
+  "bg-hover": #485CC7,
+);
+
+// MIXINS
+
+@mixin isBtn($used: map-get($map: $btn, $key: used)) {
+  @if ($used == true) {
+    .btn {
+      font-size: map-get($map: $btn, $key: size);
+      font-weight: map-get($map: $btn, $key: weight);
+      color: map-get($map: $btn, $key: color);
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+@mixin isBtnSmall($used: map-get($map: $btn-small, $key: used)) {
+  @if ($used == true) {
+    .btn-small {
+      padding: map-get($map: $btn-small, $key: padding);
+      @if (map-get($map: $btn-small, $key: margin) != none) {
+        margin: map-get($map: $btn-small, $key: margin);
+      }
+      color: map-get($map: $btn-small, $key: color);
+      background-color: map-get($map: $btn-small, $key: bg);;
+    }
+  }
+}
+@mixin isBtnMedium($used: map-get($map: $btn-medium, $key: used)) {
+  @if ($used == true) {
+    .btn-medium {
+      padding: map-get($map: $btn-medium, $key: padding);
+      @if (map-get($map: $btn-medium, $key: margin) != none) {
+        margin: map-get($map: $btn-medium, $key: margin);
+      }
+      color: map-get($map: $btn-medium, $key: color);
+      background-color: map-get($map: $btn-medium, $key: bg);
+    }
+  }
+}
+@mixin isBtnBig($used: map-get($map: $btn-big, $key: used)) {
+  @if ($used == true) {
+    .btn-big {
+      padding: map-get($map: $btn-big, $key: padding);
+      @if (map-get($map: $btn-big, $key: margin) != none) {
+        margin: map-get($map: $btn-big, $key: margin);
+      }
+      color: map-get($map: $btn-big, $key: color);
+      background-color: map-get($map: $btn-big, $key: bg);
+      border: 0.063rem solid #485CC7;
+      border-radius: 2.5rem;
+  -webkit-border-radius: 2.5rem;
+  -moz-border-radius: 2.5rem;
+  -ms-border-radius: 2.5rem;
+  -o-border-radius: 2.5rem;
+    }
+  }
+}
+// MIXINS ACTIVE AND HOVER
+
+@mixin isBtnActive() {
+  // btn
+  @if (map-get($map: $btn, $key: color-hover) != none) {
+    .btn:active {
+      color: map-get($map: $btn, $key: color-hover)
+    }
+  }
+  // btn-small
+  @if (map-get($map: $btn-small, $key: color-hover) != none) {
+    .btn-small:active {
+      color: map-get($map: $btn-small, $key: color-hover);
+      background-color: map-get($map: $btn-small, $key: bg-hover);
+    }
+  }
+  // btn-medium
+  @if (map-get($map: $btn-medium, $key: color-hover) != none) {
+    .btn-medium:active {
+      color: map-get($map: $btn-medium, $key: color-hover);
+      background-color: map-get($map: $btn-medium, $key: bg-hover);
+    }
+  }
+  // btn-big
+  @if (map-get($map: $btn-big, $key: color-hover) != none) {
+    .btn-big:active {
+      color: map-get($map: $btn-big, $key: color-hover);
+      background-color: map-get($map: $btn-big, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtnHover() {
+  // btn
+  @if (map-get($map: $btn, $key: used) == true) {
+    .btn:hover {
+      color: map-get($map: $btn, $key: color-hover)
+    }
+  }
+  // btn-small
+  @if (map-get($map: $btn-small, $key: color-hover) != none) {
+    .btn-small:hover {
+      color: map-get($map: $btn-small, $key: color-hover);
+      background-color: map-get($map: $btn-small, $key: bg-hover);
+    }
+  }
+  // btn-medium
+  @if (map-get($map: $btn-medium, $key: color-hover) != none) {
+    .btn-medium:hover {
+      color: map-get($map: $btn-medium, $key: color-hover);
+      background-color: map-get($map: $btn-medium, $key: bg-hover);
+    }
+  }
+  // btn-big
+  @if (map-get($map: $btn-big, $key: color-hover) != none) {
+    .btn-big:hover {
+      color: map-get($map: $btn-big, $key: color-hover);
+      background-color: map-get($map: $btn-big, $key: bg-hover);
+    }
+  }
+}
+
+// VERIFY AND INCLUDE CLASS
+
+@include isBtn();
+@include isBtnSmall();
+@include isBtnMedium();
+@include isBtnBig();
+
+.btn-big--outline {
+  background-color: transparent;
+  color: #1b1b1b;
+  border: 0.063rem solid #aaaaaa;
+}
+

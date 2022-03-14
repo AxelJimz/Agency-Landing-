@@ -1,0 +1,120 @@
+// * CONFIGURATION
+// State of Icons
+$icon-1: (
+  "used": true,
+  "margin": 0 1.5rem 0 0,
+  "size": 0.875,
+  "color": #aaaaaa,
+  "color-hover": #fafafa,
+);
+$icon-2: (
+  "used": true,
+  "margin": 0 1rem 0 0,
+  "size": 12px,
+  "color": #1b1b1b,
+  "color-hover": #1c1c1c80,
+);
+$icon-3: (
+  "used": false,
+  "margin": none,
+  "size": none,
+  "color": none,
+  "color-hover": none,
+);
+
+// MIXINS
+
+@mixin isIcon-1($used: map-get($map: $icon-1, $key: used)) {
+  @if ($used == true) {
+    .icon-1 {
+      margin: map-get($map: $icon-1, $key: margin);
+      font-size: map-get($map: $icon-1, $key: size);
+      color: map-get($map: $icon-1, $key: color);
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+@mixin isIcon-2($used: map-get($map: $icon-2, $key: used)) {
+  @if ($used == true) {
+    .icon-2 {
+      margin: map-get($map: $icon-2, $key: margin);
+      font-size: map-get($map: $icon-2, $key: size);
+      color: map-get($map: $icon-2, $key: color);
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+@mixin isIcon-3($used: map-get($map: $icon-3, $key: used)) {
+  @if ($used == true) {
+    .icon-3 {
+      margin: map-get($map: $icon-3, $key: margin);
+      font-size: map-get($map: $icon-3, $key: size);
+      color: map-get($map: $icon-3, $key: color);
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+
+// MIXINS ACTIVE AND HOVER
+
+@mixin isIconsActive {
+  // icon-1
+  @if (map-get($map: $icon-1, $key: color-hover) != none) {
+    .icon-1:active {
+      color: map-get($map: $icon-1, $key: color-hover);
+    }
+  }
+  // icon-2
+  @if (map-get($map: $icon-2, $key: color-hover) != none) {
+    .icon-2:active {
+      color: map-get($map: $icon-2, $key: color-hover);
+    }
+  }
+  // icon-3
+  @if (map-get($map: $icon-3, $key: color-hover) != none) {
+    .icon-3:active {
+      color: map-get($map: $icon-3, $key: color-hover);
+    }
+  }
+}
+@mixin isIconsHover {
+    // icon-1
+    @if (map-get($map: $icon-1, $key: color-hover) != none) {
+      .icon-1:hover {
+        color: map-get($map: $icon-1, $key: color-hover);
+      }
+    }
+    // icon-2
+    @if (map-get($map: $icon-2, $key: color-hover) != none) {
+      .icon-2:hover {
+        color: map-get($map: $icon-2, $key: color-hover);
+      }
+    }
+    // icon-3
+    @if (map-get($map: $icon-3, $key: color-hover) != none) {
+      .icon-3:hover {
+        color: map-get($map: $icon-3, $key: color-hover);
+      }
+    }
+  }
+
+// VERIFY AND INCLUDE CLASS
+
+@include isIcon-1();
+@include isIcon-2();
+@include isIcon-3();

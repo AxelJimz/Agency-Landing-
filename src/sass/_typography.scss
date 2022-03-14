@@ -1,0 +1,172 @@
+// * CONFIGURATION
+// State of Typography
+// Headings
+$heading-1: (
+  "used": true,
+  "margin": 0 0 1rem 0,
+  "size": 3.125rem,
+  "weight": 700,
+  "color": #fff,
+);
+$heading-2: (
+  "used": true,
+  "margin": 0 0 1rem 0,
+  "size": 1.625,
+  "weight": 700,
+  "color": #1b1b1b,
+);
+$heading-3: (
+  "used": false,
+  "margin": 0 0 1rem 0,
+  "size": 2rem,
+  "weight": none,
+  "color": #485CC7,
+);
+$heading-4: (
+  "used": true,
+  "margin": 0 0 1rem 0,
+  "size": 12px,
+  "weight": 500,
+  "color": #aaaaaa,
+);
+$heading-5: (
+  "used": false,
+  "margin": 0 0 1rem 0,
+  "size": 12px,
+  "weight": none,
+  "color": none,
+);
+// Paragraphs
+$paragraph-1: (
+  "used": true,
+  "margin": 0.5rem 0 1.5rem 0,
+  "size": 1rem,
+  "weight": none,
+  "line-height": none,
+  "color": #fff,
+);
+$paragraph-2: (
+  "used": true,
+  "margin": 0.5rem 0 1.5rem 0,
+  "size": 1rem,
+  "weight": 400,
+  "line-height": 1.75rem,
+  "color": #AAAAAA,
+);
+$paragraph-3: (
+  "used": false,
+  "margin": 0.5rem 0 1.5rem 0,
+  "size": 12px,
+  "weight": none,
+  "line-height": none,
+  "color": none,
+);
+
+// MIXINS
+
+@mixin isHeading-1($used: map-get($map: $heading-1, $key: used)) {
+    @if ($used == true) {
+        .heading-1 {
+            margin: map-get($map: $heading-1, $key: margin);
+            font-size: map-get($map: $heading-1, $key: size);
+            font-weight: map-get($map: $heading-1, $key: weight);
+            color: map-get($map: $heading-1, $key: color);
+        }
+    }
+}
+@mixin isHeading-2($used: map-get($map: $heading-2, $key: used)) {
+    @if ($used == true) {
+        .heading-2 {
+            margin: map-get($map: $heading-2, $key: margin);
+            font-size: map-get($map: $heading-2, $key: size);
+            font-weight: map-get($map: $heading-2, $key: weight);
+            color: map-get($map: $heading-2, $key: color);
+        }
+    }
+}
+@mixin isHeading-3($used: map-get($map: $heading-3, $key: used)) {
+    @if ($used == true) {
+        .heading-3 {
+            margin: map-get($map: $heading-3, $key: margin);
+            font-size: map-get($map: $heading-3, $key: size);
+            font-weight: map-get($map: $heading-3, $key: weight);
+            color: map-get($map: $heading-3, $key: color);
+        }
+    }
+}
+@mixin isHeading-4($used: map-get($map: $heading-4, $key: used)) {
+    @if ($used == true) {
+        .heading-4 {
+            margin: map-get($map: $heading-4, $key: margin);
+            font-size: map-get($map: $heading-4, $key: size);
+            font-weight: map-get($map: $heading-4, $key: weight);
+            color: map-get($map: $heading-4, $key: color);
+        }
+    }
+}
+@mixin isHeading-5($used: map-get($map: $heading-5, $key: used)) {
+    @if ($used == true) {
+        .heading-5 {
+            margin: map-get($map: $heading-5, $key: margin);
+            font-size: map-get($map: $heading-5, $key: size);
+            font-weight: map-get($map: $heading-5, $key: weight);
+            color: map-get($map: $heading-5, $key: color);
+        }
+    }
+}
+@mixin isParagraph-1($used: map-get($map: $paragraph-1, $key: used)) {
+    @if ($used == true) {
+        .paragraph-1 {
+            margin: map-get($map: $paragraph-1, $key: margin);
+            font-size: map-get($map: $paragraph-1, $key: size);
+            font-weight: map-get($map: $paragraph-1, $key: weight);
+            line-height: map-get($map: $paragraph-1, $key: line-height);
+            color: map-get($map: $paragraph-1, $key: color);
+        }
+    }
+}
+@mixin isParagraph-2($used: map-get($map: $paragraph-2, $key: used)) {
+    @if ($used == true) {
+        .paragraph-2 {
+            margin: map-get($map: $paragraph-2, $key: margin);
+            font-size: map-get($map: $paragraph-2, $key: size);
+            font-weight: map-get($map: $paragraph-2, $key: weight);
+            line-height: map-get($map: $paragraph-2, $key: line-height);
+            color: map-get($map: $paragraph-2, $key: color);
+        }
+    }
+}
+@mixin isParagraph-3($used: map-get($map: $paragraph-3, $key: used)) {
+    @if ($used == true) {
+        .paragraph-3 {
+            margin: map-get($map: $paragraph-3, $key: margin);
+            font-size: map-get($map: $paragraph-3, $key: size);
+            font-weight: map-get($map: $paragraph-3, $key: weight);
+            line-height: map-get($map: $paragraph-3, $key: line-height);
+            color: map-get($map: $paragraph-3, $key: color);
+        }
+    }
+}
+
+// VERIFY AND INCLUDE CLASS
+
+@include isHeading-1();
+@include isHeading-2();
+@include isHeading-3();
+@include isHeading-4();
+@include isHeading-5();
+@include isParagraph-1();
+@include isParagraph-2();
+@include isParagraph-3();
+
+// Text Aling
+
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: center;
+}
